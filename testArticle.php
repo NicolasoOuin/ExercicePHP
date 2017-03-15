@@ -3,9 +3,14 @@
 require_once ('Connexionbdd.php');
 require_once("Article.php");
 
-$sql=
+$sql = 'SELECT * FROM articles';
+$result = $conn->query($sql);
 
-$monpremierarticle = new Article ("$donnees())", "Contenu de l'article à rechercher en SQL");
+if ($result->num_rows === 1) {
+    while($donnees = $result->fetch_assoc()) {
+        $monpremierarticle = new Article ("$donnees[Titre]", "$donnees[Contenu]");
 
-echo '<h1>Titre: '.$monpremierarticle->getTitlearticle().'</h1><br>';
-echo '<p>Contenu: '.$monpremierarticle->getContenu().'</p>';
+        echo '<h1 style="width:200px;margin:auto;">'.$monpremierarticle->getTitlearticle().'</h1><br>';
+        echo '<p style="width:200px;margin:auto;">'.$monpremierarticle->getContenu().'</p>';
+    }
+}
