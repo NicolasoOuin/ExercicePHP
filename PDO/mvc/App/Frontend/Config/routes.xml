@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<routes>
-  <route url="/mvc/" module="News" action="index" />
-  <route url="/mvc/news-([0-9]+)\.html" module="News" action="show" vars="id"/>
-  <route url="/mvc/commenter-([0-9]+)\.html" module="News" action="insertComment" vars="news" />
-</routes>
