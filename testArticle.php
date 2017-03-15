@@ -14,3 +14,8 @@ if ($result->num_rows === 1) {
         echo '<p style="width:200px;margin:auto;">'.$monpremierarticle->getContenu().'</p>';
     }
 }
+else {
+    echo 'La base de données de comporte aucun article';
+}
+
+$conn->close();  
